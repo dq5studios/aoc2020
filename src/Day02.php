@@ -16,10 +16,8 @@ class Day02 extends Command
      */
     public function firstHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day2a.txt");
-
         $valid = 0;
-        preg_match_all("/([0-9]+)-([0-9]+) ([a-z]): ([a-z]*)/", $ff, $matches, PREG_SET_ORDER);
+        preg_match_all("/([0-9]+)-([0-9]+) ([a-z]): ([a-z]*)/", $this->input, $matches, PREG_SET_ORDER);
 
         foreach ($matches as $match) {
             [$a, $min, $max, $char, $pass] = $match;
@@ -39,10 +37,8 @@ class Day02 extends Command
      */
     public function secondHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day2a.txt");
-
         $valid = 0;
-        preg_match_all("/([0-9]+)-([0-9]+) ([a-z]): ([a-z]*)/", $ff, $matches, PREG_SET_ORDER);
+        preg_match_all("/([0-9]+)-([0-9]+) ([a-z]): ([a-z]*)/", $this->input, $matches, PREG_SET_ORDER);
 
         foreach ($matches as $match) {
             [$a, $first, $second, $char, $pass] = $match;

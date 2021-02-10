@@ -16,9 +16,7 @@ class Day03 extends Command
      */
     public function firstHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day3a.txt");
-
-        $map = explode("\n", $ff);
+        $map = explode("\n", $this->input);
 
         $trees = (string) $this->shift($map, 3, 1);
 
@@ -59,9 +57,7 @@ class Day03 extends Command
      */
     public function secondHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day3a.txt");
-
-        $map = explode("\n", $ff);
+        $map = explode("\n", $this->input);
 
         $multi = [
             [1, 1],

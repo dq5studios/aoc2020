@@ -16,8 +16,7 @@ class Day01 extends Command
      */
     public function firstHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day1a.txt");
-        $input = explode("\n", $ff);
+        $input = explode("\n", $this->input);
         sort($input, SORT_NUMERIC);
 
         foreach ($input as $value) {
@@ -36,8 +35,7 @@ class Day01 extends Command
      */
     public function secondHalf(SymfonyStyle $io): void
     {
-        $ff = file_get_contents(__DIR__ . "/day1a.txt");
-        $input = explode("\n", $ff);
+        $input = explode("\n", $this->input);
         sort($input, SORT_NUMERIC);
 
         foreach ($input as $key => $value) {
