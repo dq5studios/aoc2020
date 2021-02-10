@@ -10,9 +10,17 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 $app = new Application();
 
+$filelist = glob(__DIR__ . "/../src/Day*.php");
+
 try {
-    $app->add(new Day01());
-    $app->add(new Day02());
+    foreach ($filelist as $filename) {
+        $classname = pathinfo($filename, PATHINFO_FILENAME);
+        $classname = "\\" . __NAMESPACE__ . "\\" . $classname;
+        if (class_exists($classname) && is_subclass_of($classname, Command::class)
+        ) {
+            $app->add(new $classname());
+        }
+    }
     $app->run();
 } catch (Exception $e) {
     echo "There was an error starting", PHP_EOL;
