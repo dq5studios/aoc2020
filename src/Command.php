@@ -20,7 +20,7 @@ abstract class Command extends SymfonyCommand
      */
     protected function configure(): void
     {
-        $this->setName(static::class);
+        $this->setName(static::class)->setDescription("Puzzle for the day");
         $this->addArgument("puzzle", InputArgument::OPTIONAL, "A|B", "A");
     }
 
