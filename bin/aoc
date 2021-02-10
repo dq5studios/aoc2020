@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+namespace AOC;
+
+use Exception;
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+$app = new Application();
+
+try {
+    $app->add(new Day01());
+    $app->add(new Day02());
+    $app->run();
+} catch (Exception $e) {
+    echo "There was an error starting", PHP_EOL;
+    echo $e->getMessage(), PHP_EOL;
+}

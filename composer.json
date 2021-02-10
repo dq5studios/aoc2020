@@ -1,15 +1,27 @@
 {
     "name": "bdusinberre/aoc2020",
     "type": "project",
-    "require-dev": {
-        "vimeo/psalm": "^4.4",
-        "squizlabs/php_codesniffer": "^3.5"
-    },
+    "description": "Advent of Code 2020",
+    "license": "mit",
     "authors": [
         {
             "name": "Ben Dusinberre",
             "email": "ben@dq5studios.com"
         }
     ],
-    "require": {}
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "symfony/console": "^5.2"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.4",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AOC\\": "src/"
+        }
+    }
 }
