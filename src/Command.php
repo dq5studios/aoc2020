@@ -25,7 +25,9 @@ abstract class Command extends SymfonyCommand
      */
     protected function configure(): void
     {
-        $this->setName(static::class)->setDescription("Puzzle for the day");
+        $name = explode("\\", strtolower(static::class))[1];
+        $numb = preg_replace('/day([0-9])*/', 'day $1', $name);
+        $this->setName($name)->setDescription("Puzzle for {$numb}");
         $this->addArgument("puzzle", InputArgument::OPTIONAL, "A|B", "A");
         $this->addOption(
             "input",
