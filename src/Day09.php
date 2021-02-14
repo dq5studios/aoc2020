@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC;
 
 use AOC\Command;
-use Exception;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 class Day09 extends Command
